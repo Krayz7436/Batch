@@ -22,5 +22,7 @@ if '%Opt%'=='1' goto :ex
 if '%Opt%'=='2' goto :ex
 :ex
 echo This is just an example.
-pause
+echo exiting
+TIMEOUT /T 3 /NOBREAK >nul
+exit /b
 
