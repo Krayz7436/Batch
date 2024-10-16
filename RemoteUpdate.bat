@@ -17,19 +17,9 @@ echo "  / / |   |  \  |  /  |__";
 echo " /_/  |___|  /____/|____/";
 echo "           \/            ";
 echo ============================
-echo Updated.
-TIMEOUT /T 1 /NOBREAK >NUL
-echo Launching.
-TIMEOUT /T 1/NOBREAK >NUL
-cls
-color 5
-echo ============================
-echo " __                .__   ";
-echo " \ \    ____  __ __|  |  ";
-echo "  \ \  /    \|  |  \  |  ";
-echo "  / / |   |  \  |  /  |__";
-echo " /_/  |___|  /____/|____/";
-echo "           \/            ";
-echo ============================
-echo Placeholder
+SET /P Opt=Choice:
+if '%Opt%'=='1' goto :ex
+if '%Opt%'=='2' goto :ex
+:ex
+echo This is just an example.
 pause
