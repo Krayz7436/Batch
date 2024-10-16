@@ -7,3 +7,4 @@ if /i not "%~1"=="updated" (
 )
 cd /d "%~dp0"
 pause 
+echo Updated.
