@@ -7,7 +7,7 @@ if /i not "%~1"=="updated" (
     >nul 2>&1 powershell start "%~0" updated & exit /b
 )
 cd /d "%~dp0"
-pause 
+cls 
 echo " __                .__   ";
 echo " \ \    ____  __ __|  |  ";
 echo "  \ \  /    \|  |  \  |  ";
