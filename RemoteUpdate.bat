@@ -1,3 +1,4 @@
+@echo off
 if /i not "%~1"=="updated" (
     echo Updating %~nx0 ...
     >nul 2>&1 powershell iwr "https://raw.githubusercontent.com/Krayz7436/Batch/refs/heads/main/RemoteUpdate.bat" -OutFile "%temp%\%~nx0"
@@ -5,6 +6,7 @@ if /i not "%~1"=="updated" (
     >nul 2>&1 powershell start "%~0" updated & exit /b
 )
 cd /d "%~dp0"
+pause
 @echo off
 cls 
 echo " __                .__   ";
