@@ -9,11 +9,17 @@ cd /d "%~dp0"
 pause
 @echo off
 cls 
+echo ============================
 echo " __                .__   ";
 echo " \ \    ____  __ __|  |  ";
 echo "  \ \  /    \|  |  \  |  ";
 echo "  / / |   |  \  |  /  |__";
 echo " /_/  |___|  /____/|____/";
 echo "           \/            ";
+echo ============================
 echo Updated.
+TIMEOUT /T 1 /NOBREAK >NUL
+echo Launching.
+TIMEOUT /T 1/NOBREAK >NUL
+
 pause
