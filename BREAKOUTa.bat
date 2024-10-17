@@ -50,7 +50,8 @@ echo "    \|_______|\|__|\|__|\|_______|\|__|\|__|\|__| \|__|\|_______|\|_______
 echo "                                                                                    ";
 echo =======================================================================================
 echo Successfully completed task.
-
+TIMEOUT /T 5 /NOBREAK >nul
+echo Installing next phase.
 
 
 
