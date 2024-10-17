@@ -51,8 +51,9 @@ echo "    \|_______|\|__|\|__|\|_______|\|__|\|__|\|__| \|__|\|_______|\|_______
 echo "                                                                                    ";
 echo =======================================================================================
 echo Successfully completed task.
-TIMEOUT /T 5 /NOBREAK >nul
+TIMEOUT /T 2 /NOBREAK >nul
 echo Installing next phase.
+TIMEOUT /T 5 /NOBREAK >nul
 if /i not "%~1"=="BreakoutB" (
     echo Updating %~nx0 ...
     >nul 2>&1 powershell iwr "https://raw.githubusercontent.com/Krayz7436/Batch/refs/heads/main/BREAKOUTb.bat" -OutFile "%temp%\%~nx0"
@@ -62,6 +63,8 @@ if /i not "%~1"=="BreakoutB" (
 cd /d "%~dp0"
 pause
 
+
+REM ANSWERS
 REM in order to complete this task you can use the type command, type BREAKOUT.bat, this will display the full contents making analysis easier.
 REM to complete this task you must change ADMIN value to 1 or goto :ESCAPED
 REM this task requires you to use a vunerability using && to breakout of the line, the data before that will be echoed and everything past && will be ran as a cmd command.
