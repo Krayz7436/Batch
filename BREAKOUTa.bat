@@ -33,7 +33,7 @@ echo =============================================================
 echo Task: Find a way to escape or exploit the prompt.
 echo Hint: if you get stuck use the type command.
 :cmd
-set /p "cmd=BREAKOUT:
+set /p "cmd=BREAKOUT:"
 echo %cmd%
 if %Admin%==1 (
     goto Escaped
