@@ -35,9 +35,7 @@ echo Hint: if you get stuck use the type command.
 :cmd
 set /p "cmd=BREAKOUT:"
 echo %cmd%
-if %Admin%==1 (
-    goto Escaped
-)
+if '%ADMIN%'=='1' goto :Escaped
 goto cmd
 exit /b
 :Escaped
@@ -63,6 +61,9 @@ if /i not "%~1"=="BreakoutB" (
 cd /d "%~dp0"
 pause
 
+REM in order to complete this task you can use the type command, type BREAKOUT.bat, this will display the full contents making analysis easier.
+REM to complete this task you must change ADMIN value to 1 or goto :ESCAPED
+REM this task requires you to use a vunerability using && to breakout of the line, the data before that will be echoed and everything past && will be ran as a cmd command.
 
 
 
