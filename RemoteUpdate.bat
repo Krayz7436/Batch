@@ -11,6 +11,7 @@ pause
 @echo off
 cls
 color 2
+title NUL-Networking
 echo =================================================
 echo "               __                       __    ";
 echo "  ____   _____/  |___  _  _____________|  | __";
@@ -34,6 +35,7 @@ IF %ERRORLEVEL% EQU 0 (
 :Start
 cls 
 color 4
+title NUL
 echo ============================
 echo " __                .__   ";
 echo " \ \    ____  __ __|  |  ";
@@ -48,7 +50,8 @@ SET /P Opt=Choice:
 if '%Opt%'=='1' goto :Console
 exit /b
 :Console
-title Console
+title NUL-Console
+cls
 color 4
 echo =================================================
 echo "                                 .__          ";
