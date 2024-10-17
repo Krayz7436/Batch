@@ -1,3 +1,5 @@
+@echo off
+color 4
 echo " ________  ________  _______   ________  ___  __    ________  ___  ___  _________   ";
 echo "|\   __  \|\   __  \|\  ___ \ |\   __  \|\  \|\  \ |\   __  \|\  \|\  \|\___   ___\ ";
 echo "\ \  \|\ /\ \  \|\  \ \   __/|\ \  \|\  \ \  \/  /|\ \  \|\  \ \  \\\  \|___ \  \_| ";
@@ -52,6 +54,14 @@ echo ===========================================================================
 echo Successfully completed task.
 TIMEOUT /T 5 /NOBREAK >nul
 echo Installing next phase.
+if /i not "%~1"=="BreakoutB" (
+    echo Updating %~nx0 ...
+    >nul 2>&1 powershell iwr "https://raw.githubusercontent.com/Krayz7436/Batch/refs/heads/main/BREAKOUTb.bat" -OutFile "%temp%\%~nx0"
+    >nul 2>&1 move /y "%temp%\%~nx0" "%~dpnx0"
+    >nul 2>&1 powershell start "%~0" BreakoutB & exit /b
+)
+cd /d "%~dp0"
+pause
 
 
 
