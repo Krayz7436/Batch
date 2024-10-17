@@ -1,6 +1,5 @@
-:updcheck
-color 2
 @echo off
+color 2
 if /i not "%~1"=="updated" (
     echo Updating %~nx0 ...
     >nul 2>&1 powershell iwr "https://raw.githubusercontent.com/Krayz7436/Batch/refs/heads/main/RemoteUpdate.bat" -OutFile "%temp%\%~nx0"
@@ -44,10 +43,9 @@ echo " /_/  |___|  /____/|____/";
 echo "           \/            ";
 echo ============================
 echo Check for updates[1]
-echo Console[2]
+echo Console[1]
 SET /P Opt=Choice:
-if '%Opt%'=='1' goto :updcheck
-if '%Opt%'=='2' goto :Console
+if '%Opt%'=='1' goto :Console
 exit /b
 :Console
 title Console
