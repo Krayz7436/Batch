@@ -44,8 +44,8 @@ echo "  / / |   |  \  |  /  |__";
 echo " /_/  |___|  /____/|____/";
 echo "           \/            ";
 echo ============================
-echo Check for updates[1]
-echo Console[1]
+echo Nul-Console[1]
+echo ============================
 SET /P Opt=Choice:
 if '%Opt%'=='1' goto :Console
 exit /b
