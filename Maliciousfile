@@ -1,0 +1,2 @@
+@echo off
+rem This is the "Malware" that will be located in %temp% during puzzle b.
