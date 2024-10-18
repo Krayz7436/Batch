@@ -9,6 +9,7 @@ goto Incomplete
 REM This is the precheck, it changes the text color to red, Checks for a valid internet connection, If valid the program calls :Start initaiting the puzzle.
 @echo off
 color 4
+echo =======================================================================================
 echo " ________  ________  _______   ________  ___  __    ________  ___  ___  _________   ";
 echo "|\   __  \|\   __  \|\  ___ \ |\   __  \|\  \|\  \ |\   __  \|\  \|\  \|\___   ___\ ";
 echo "\ \  \|\ /\ \  \|\  \ \   __/|\ \  \|\  \ \  \/  /|\ \  \|\  \ \  \\\  \|___ \  \_| ";
@@ -46,3 +47,19 @@ if /i not "%~1"=="BreakoutC" (
 )
 cd /d "%~dp0"
 pause
+
+set /a '%digit1%'='7'
+set /a '%digit2%'='2'
+set /a '%digit3%'='5'
+set /a '%digit4%'='1'
+if %digit1%==7 (
+    if %digit2%==2 (
+    if %digit3%==5 (
+    if %digit4%==1 (
+goto unlocked
+)
+)
+)
+) else (
+    exit /b
+)
