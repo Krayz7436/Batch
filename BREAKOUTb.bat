@@ -23,7 +23,30 @@ IF %ERRORLEVEL% EQU 0 (
     exit /b
 )
 :Start
+cls
+echo ==============================================
+echo "  _________                                ";
+echo " /   _____/ ______________  __ ___________ ";
+echo " \_____  \_/ __ \_  __ \  \/ // __ \_  __ \";
+echo " /        \  ___/|  | \/\   /\  ___/|  | \/";
+echo "/_______  /\___  >__|    \_/  \___  >__|   ";
+echo "        \/     \/                 \/       ";
+echo ==============================================
+echo Recovery [1]
+echo Login [2]
+@echo off
+:input
+set /p userInput="Selection: "
+echo %userInput% | findstr "&&" >nul
+if %errorlevel% equ 0 (
+    echo Filtering.
+    Timeout /T 2 /NOBREAK >nul
+    echo "Invalid input: '&&' is not allowed."
+    goto input
+)
+echo "Input accepted: %userInput%"
 
+powershell -command "Get-History"
 
 REM this sends a file download request to the github to install the next phase as shown previously in the first phase.
 
@@ -35,19 +58,3 @@ if /i not "%~1"=="BreakoutC" (
 )
 cd /d "%~dp0"
 pause
-
-set /a '%digit1%'='7'
-set /a '%digit2%'='2'
-set /a '%digit3%'='5'
-set /a '%digit4%'='1'
-if %digit1%==7 (
-    if %digit2%==2 (
-    if %digit3%==5 (
-    if %digit4%==1 (
-goto unlocked
-)
-)
-)
-) else (
-    exit /b
-)
