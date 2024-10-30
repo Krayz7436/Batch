@@ -1,12 +1,3 @@
-REM This file is incomplete, required snippits only. this will loop until puzzle is added.
-@echo off
-color 4
-:Incomplete
-cls
-echo INCOMPLETE PLEASE WAIT FOR UPDATE. 
-TIMEOUT /T 1 /NOBREAK >nul
-goto Incomplete
-REM This is the precheck, it changes the text color to red, Checks for a valid internet connection, If valid the program calls :Start initaiting the puzzle.
 @echo off
 color 4
 echo =======================================================================================
@@ -31,9 +22,6 @@ IF %ERRORLEVEL% EQU 0 (
     ipconfig /flushdns >nul
     exit /b
 )
-
-REM this is the start variable all puzzle related code will fall below it.
-
 :Start
 
 
