@@ -1,4 +1,6 @@
 @echo off
+setlocal enabledelayedexpansion
+title BREAKOUTb
 color 4
 echo =======================================================================================
 echo " ________  ________  _______   ________  ___  __    ________  ___  ___  _________   ";
@@ -45,6 +47,31 @@ if %errorlevel% equ 0 (
     goto input
 )
 echo "Input accepted: %userInput%"
+if %userInput%==1 goto :RecoveryTools
+if %userInput%==2 goto :Login
+echo Error invalid input selected.
+Timeout /T 5 /NOBREAK >nul
+exit /b
+:RecoveryTools
+REM Decrypter here
+
+:Login
+set /p "KEY=Password"
+set "GITHUB_URL=https://raw.githubusercontent.com/Krayz7436/Batch/refs/heads/main/test.txt"
+for /f "delims=" %%i in ('powershell -Command "(Invoke-WebRequest -Uri '%GITHUB_URL%').Content"') do (
+    set "LINE=%%i"
+)
+
+:: Compare the variable with the line from the GitHub file
+if "%KEY%" == "!LINE!" (
+    echo The variable matches the content of the GitHub file.
+) else (
+    echo The variable does not match the content of the GitHub file.
+)
+pause
+endlocal
+
+REM imports raw github txt file and runs it within the current shell.
 
 powershell -command "Get-History"
 
