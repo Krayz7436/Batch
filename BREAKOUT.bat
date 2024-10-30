@@ -28,3 +28,5 @@ if /i not "%~1"=="BreakoutA" (
 cd /d "%~dp0"
 pause
 @echo off
+
+REM this will install the project, please allow downloads.
