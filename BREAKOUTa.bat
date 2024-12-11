@@ -1,4 +1,5 @@
 @echo off
+REM Will not work if web request are disabled
 set /a %ADMIN%=0 >nul
 color 4
 echo " ________  ________  _______   ________  ___  __    ________  ___  ___  _________   ";
